@@ -96,16 +96,76 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # The bubble sort algorithm would be helpful to write this function.
+        # How?
+        
+        # Robot compares each item in the list to the next one. If item in position i is higher than
+        # item in position i + 1, robot swaps them. You can check you're finished with can_move_right
+        # method.
+
+        # If there was a swap, you turn the robot's light on. If light is on at the end of the list,
+        # you start all over again from the start of the list until light is off at the end of list.
+
+        # ******************************************************************
+
+        # Take the first item
+
+        # Set light on to enter while loop
+        self.set_light_on()
+
+        # Loop until no swaps are made
+        while self.light_is_on() == True:
+
+            # Sets initial state to no swaps 
+            self.set_light_off()
+
+            # Takes robot to beginning of list
+            while self.can_move_left() == True:
+                self.move_left()
+            
+            # Pick first item
+            self.swap_item()
+
+            # Begin loop until end of list
+            while self.can_move_right() == True:
+            
+                self.move_right()
+
+                if self.compare_item() == 1:
+                    # If next item is smaller, swap them and turn light on
+                    self.swap_item()
+                    self.set_light_on()
+                    # Then go back and leave the other item behind, swap it for None.
+                    self.move_left()
+                    self.swap_item()
+                    # Then return to previous position and grab item
+                    self.move_right()
+                    self.swap_item()
+            
+                # If it's equal, go back, leave the item and take the next one
+                elif self.compare_item == 0:
+                    # Then go back and leave the other item behind, swap it for None.
+                    self.move_left()
+                    self.swap_item()
+                    # Then return to previous position and grab item
+                    self.move_right()
+                    self.swap_item()
+
+                else:
+                    # If it's bigger, go back and leave the item in it's place
+                    self.move_left()
+                    self.swap_item()
+                    # And then take the next item to start the loop again
+                    self.move_right()
+                    self.swap_item()
+
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
-
+    l = [5, 4, 3, 2, 1]
     robot = SortingRobot(l)
 
     robot.sort()
