@@ -31,3 +31,7 @@ I would use a divide and conquer strategy.
 3. If it doesn't break, i know im too low, so i try again. The floor i use is the middle between the current floor and the highest floor.
 4. I do this until the division cannot be done anymore.
 5. At that point, i know that the last floor from which the egg didn't break is f
+
+The runtime complexity would be o(n), n being the number of floors in the building. The higher the building, the more divisions needed, but number of divisions would increment in a proportional manner.
+
+I think the exact complexity would be o(n/2), which ends up being o(n)
