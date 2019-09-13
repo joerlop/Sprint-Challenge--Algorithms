@@ -20,7 +20,7 @@ Given this, this algorithm has a performance between o(n^2) and o (n log n).
 
 c)
 
-
+It's going to be o(n). With each increase in n, the number of operations performed increases proportionally. Each time n increases by 1, the number of operations increases by 1 until bunnies == 0, when the algorithm returns.
 
 ## Exercise II
 

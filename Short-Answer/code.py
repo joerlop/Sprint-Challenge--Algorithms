@@ -29,3 +29,20 @@ def question_b(n):
 
 for i in range(20):
     print(f"i: {i}, count: {question_b(i)}")
+
+print("*****************************************")
+
+counter = 0
+
+def bunnyEars(bunnies):
+    global counter
+
+    if bunnies == 0:
+        return 0
+    
+    counter += 1
+
+    return 2 + bunnyEars(bunnies-1)
+
+bunnyEars(4)
+print(counter)
