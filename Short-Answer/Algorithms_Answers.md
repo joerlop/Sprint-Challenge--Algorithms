@@ -24,4 +24,10 @@ It's going to be o(n). With each increase in n, the number of operations perform
 
 ## Exercise II
 
+I would use a divide and conquer strategy. 
 
+1. I take the middle floor of the building and throw an egg.
+2. If it breaks, I know I'm too high, so I try again. The floor I use is the middle between the current floor and the first floor.
+3. If it doesn't break, i know im too low, so i try again. The floor i use is the middle between the current floor and the highest floor.
+4. I do this until the division cannot be done anymore.
+5. At that point, i know that the last floor from which the egg didn't break is f
