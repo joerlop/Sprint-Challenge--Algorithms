@@ -8,9 +8,19 @@ It's o(n) because with each additional increase in n, the number of operations i
 
 b)
 
+It certainly looks like an o(n^2) because of the 2 nested loops. However, it isn't because in the while loop the j doesn't increment by 1 but rather it gets multiplied by 2. This makes the second loop perform less operations than if j increased by 1 each iteration.
 
+So, we know it's less than o(n^2).
+
+We also know it's higher than o(n) because it has 2 loops. The first one increases proportionally with n. The second one also increases with n, although not proportionally.
+
+By running the algorithm in code.py it can be seen that it's also higher than o(n * log n) for many values of n. 
+
+Given this, this algorithm has a performance between o(n^2) and o (n log n).
 
 c)
+
+
 
 ## Exercise II
 
