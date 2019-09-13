@@ -158,6 +158,8 @@ class SortingRobot:
                     # And then take the next item to start the loop again
                     self.move_right()
                     self.swap_item()
+            
+            self.swap_item()
 
 
 
